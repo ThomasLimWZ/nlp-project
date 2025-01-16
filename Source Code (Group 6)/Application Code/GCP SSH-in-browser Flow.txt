@@ -1,0 +1,26 @@
+cd nlp-sa-app
+alias python3=python
+
+python -m venv myenv
+source myenv/bin/activate
+pip install torch --no-cache-dir
+pip install -r requirements.txt
+python -m spacy download en_core_web_tr
+
+nano app.py -> app.run(host='0.0.0.0', port='8080')
+nano utils.py
+nano globals.py
+nano words_alpha.txt
+
+nlp-sa-app (root) > mkdir templates > cd templates > nano interface.html
+
+pip install gdown
+sudo apt install unzip
+
+nlp-sa-app (root) > mkdir model > cd model > gdown --id 15GZ_w_ZAah5-oJv_Xe9GzhH0e_8U9RNh
+unzip bert.zip
+
+nlp-sa-app (root) > mkdir data > cd data > gdown --id 1ui2Y99FGM6U36Xh6awxcFo9c6Wk2XYiE 
+unzip data.zip
+
+python app.py
